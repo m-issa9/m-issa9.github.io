@@ -380,14 +380,6 @@ cursor: default;
     border-color: #ff8651;
 }
 
-.project-3-container .prject-img {
-    border-radius: 2rem;
-    width: auto; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 90%; /* Ensure it doesn't overflow */
-    object-fit: contain; /* Ensure the image fits without distortion */
-  
-}
 
 /* contact sectoin */
 #contact{
