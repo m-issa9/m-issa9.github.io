@@ -386,8 +386,7 @@ cursor: default;
     height: auto; /* Maintain aspect ratio */
     max-height: 90%; /* Ensure it doesn't overflow */
     object-fit: contain; /* Ensure the image fits without distortion */
-    position: relative; /* Enable positioning */
-    top: 20px; /* Adjust this value to move the image down */
+  
 }
 
 /* contact sectoin */
