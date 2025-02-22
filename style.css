@@ -382,12 +382,12 @@ cursor: default;
 
 .project-3-container .prject-img {
     border-radius: 2rem;
-    width: 65%; /* Adjust width as needed */
+    width: auto; /* Adjust width as needed */
     height: auto; /* Maintain aspect ratio */
     max-height: 90%; /* Ensure it doesn't overflow */
     object-fit: contain; /* Ensure the image fits without distortion */
     position: relative; /* Enable positioning */
-    top: 80px; /* Adjust this value to move the image down */
+    top: 20px; /* Adjust this value to move the image down */
 }
 
 /* contact sectoin */
