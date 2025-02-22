@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Protiflo</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo"><p >M</p>ahdi  <p> S</p>eikh </p>I</p>ssa  </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a> </li>
+                <li><a href="#experience">Experience</a> </li>
+                <li><a href="#projects">Projects</a> </li>
+                <li><a href="#contact">Contact</a> </li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="humburger-nav">
+        <div class="logo"><p >M</p>ahdi  <p> S</p>eikh </p>I</p>ssa  </div>
+        <div class="humburger-menu">
+            <div class="humburger-icon" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="togglemenu()">about</a> </li>
+                <li><a href="#experience" onclick="togglemenu()">Experience</a> </li>
+                <li><a href="#projects" onclick="togglemenu()">Projects</a> </li>
+                <li><a href="#contact" onclick="togglemenu()">Contact</a> </li>
+            </div>
+        </div>
+    </nav>
+    <section id="prfoile">
+        <div class="section__pic-container">
+            <div class="shape-image"></div>
+            <img class="profile-image" src="./assets/profile-pic.jpg" alt="mahdi profile-pic">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello,I'm</p>
+            <h1 class="title">Mahdi Sheikh Issa</h1>
+            <p class="section__text__p2">
+                Artificial Intelligence Engineer 
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2"
+                onclick="window.open('./assets/Mahdi-CV.pdf')"
+                >
+                Download CV
+                </button>
+                <button class="btn btn-color-1"
+                onclick="location.href='#contact'"
+                >
+                Contact info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My linkedin Profile"
+                class="icon"
+                onclick="location.href='https://www.linkedin.com/in/mahdi-issa-191195244/'">
+                <img src="./assets/github.png" alt="My github Profile"
+                class="icon"
+                onclick="location.href='https://github.com/m-issa9'">
+                
+                
+                <img src="./assets/instagram.png" alt="My instagram Profile"
+                class="icon"
+                onclick="location.href='https://www.instagram.com/m.i_9.8/'">
+                
+                
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="detailes-container">
+                        <img src="./assets/experience.png" alt="Experience icon"
+                        class="icon"/>
+                        <h3>Experience</h3>
+                        <p>4+ Year <br>Freelancing</p>
+                    </div>
+                    <div class="detailes-container">
+                        <img src="./assets/education.png" alt="education icon"
+                        class="icon"/>
+                        <h3>Education</h3>
+                        <p>Bechelor in ITE<br>Artificial Intelligence Engineering</p>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>
+                        "Artificial Intelligence Engineer with over four years of freelancing experience in developing cutting-edge solutions.
+                         Proficient in front-end mobile app development using Flutter and back-end development with Django, 
+                         complemented by expertise in MySQL for database management. Experienced in a wide range of AI-related tasks,
+                          including deep learning, machine learning, and Python programming. Successfully developed and deployed websites, showcasing strong web development capabilities. 
+                          Possess foundational knowledge in Apache Spark and Scala, further enhancing versatility in big data processing. 
+                          Passionate about delivering innovative, scalable, and efficient solutions in the tech industry.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#experience'">
+    </section>
+    <section id="experience">
+        <p class="section__text">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Ai Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Computer Vision</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Natural Language Processing</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Machine Learning</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Deep Learning</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Web Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>bootstrap</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>THREEjs</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Flutter Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Flutter</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>GET-X</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Firebase</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>UI-UX</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Back-end Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Django</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>GET-X</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Laravel</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>SQLlite</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>MySQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#projects'">
+    </section>
+    <section id="projects">
+        <P class="section__text__p1">Browse My Recent</P>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-1.jbg" alt="project-1" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Sign Language learning app</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/m-issa9/Reflect-us.git'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-2.jbg" alt="project-2" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Ai Music Player</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/m-issa9/Ai-Music-Player'">
+                            Github
+                        </button>
+                    </div>
+                </div>
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-3.png" alt="project-3" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Engiservice website</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://www.engiservice.se'">
+                            visit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#contact'">
+    </section>
+    <section id="contact">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="email icon" class="icon contact-icon email-icon"/>
+                <p><a href="mailto:mhde.esa98@gmail.com">mhde.esa98@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="linkedin icon" class="icon contact-icon"/>
+                <p><a href="https://www.linkedin.com/in/mahdi-issa-191195244/">linkedin</a></p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <nav>
+            <div class="nav-links-conatiner">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a> </li>
+                    <li><a href="#experience">Experience</a> </li>
+                    <li><a href="#projects">Projects</a> </li>
+                    <li><a href="#contact">Contact</a> </li>
+                </ul>
+            </div>
+        </nav>
+        <p>CopyRight &#169; 2025 Mahdi Sheikh Issa. All Rights Reserved</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
