@@ -364,10 +364,8 @@ cursor: default;
 
 .prject-img {
     border-radius: 2rem;
-    width: auto; 
-    height: auto; 
-    max-height: 90%; 
-    object-fit: contain; 
+    width: 65%;
+    height: 90%;
 }
 
 .prject-title {
