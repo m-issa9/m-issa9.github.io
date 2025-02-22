@@ -348,24 +348,34 @@ cursor: default;
 
 /* PROJECTS SECTION */
 
-#projects{
+#projects {
     position: relative;
 }
 
-.color-container{
+.color-container {
     border-color: rgb(163, 163, 163);
     background: rgb(250, 250, 250);
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    text-align: center; 
 }
-.prject-img{
+
+.prject-img {
     border-radius: 2rem;
-    width: 65%;
-    height: 90%;
+    width: auto; 
+    height: auto; 
+    max-height: 90%; 
+    object-fit: contain; 
 }
-.prject-title{
+
+.prject-title {
     margin: 1rem;
     color: black;
 }
-.project-btn{
+
+.project-btn {
     color: black;
     border-color: #ff8651;
 }
