@@ -1,907 +1,388 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Sheikh Issa | AI Engineer Portfolio</title>
-    <meta name="description" content="AI Engineer portfolio showcasing expertise in machine learning, deep learning, data engineering, and full-stack development.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #0D9488;
-            --primary-light: #14B8A6;
-            --accent: #F59E0B;
-            --background: #FAF8F6;
-            --foreground: #2D3748;
-            --card-bg: #FFFFFF;
-            --muted: #E5E7EB;
-            --muted-foreground: #6B7280;
-            --border: #E5E7EB;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--background);
-            color: var(--foreground);
-            line-height: 1.6;
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            line-height: 1.2;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 2rem;
-            }
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            background-color: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(4px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        nav .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 0.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 1.125rem;
-        }
-
-        .logo-text {
-            font-weight: bold;
-            font-size: 1.125rem;
-            display: none;
-        }
-
-        @media (min-width: 640px) {
-            .logo-text {
-                display: inline;
-            }
-        }
-
-        nav ul {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--foreground);
-            font-size: 0.875rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            overflow: hidden;
-            background-size: cover;
-            background-position: center;
-            background-image: url('./assets/hero-bg.png');
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-color: rgba(250, 248, 246, 0.7);
-            z-index: 1;
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 10;
-            padding: 6rem 1rem;
-        }
-
-        .hero-content {
-            max-width: 48rem;
-        }
-
-        .hero-subtitle {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero-title {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            color: var(--foreground);
-        }
-
-        @media (min-width: 768px) {
-            .hero-title {
-                font-size: 4rem;
-            }
-        }
-
-        .hero-description {
-            font-size: 1.5rem;
-            color: var(--muted-foreground);
-            margin-bottom: 2rem;
-        }
-
-        .hero-text {
-            font-size: 1.125rem;
-            color: var(--muted-foreground);
-            margin-bottom: 2rem;
-            max-width: 32rem;
-            line-height: 1.8;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.2s;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-light);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--foreground);
-            border: 1px solid var(--border);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--muted);
-        }
-
-        .socials {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-link {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.5rem;
-            background-color: rgba(255, 255, 255, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.2s;
-            text-decoration: none;
-            color: var(--foreground);
-        }
-
-        .social-link:hover {
-            background-color: white;
-        }
-
-        .social-link i {
-            font-size: 1.25rem;
-        }
-
-        /* Section Spacing */
-        section {
-            padding: 4rem 0;
-        }
-
-        @media (min-width: 768px) {
-            section {
-                padding: 6rem 0;
-            }
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .section-subtitle {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 1.125rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title {
-            font-size: 2.25rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 3rem;
-            }
-        }
-
-        /* About Section */
-        #about {
-            background-color: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        @media (min-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .about-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: box-shadow 0.2s;
-        }
-
-        .card:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.5rem;
-            background-color: rgba(13, 148, 136, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        .card-text {
-            color: var(--muted-foreground);
-            font-size: 0.95rem;
-        }
-
-        .about-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--muted-foreground);
-            font-size: 1.125rem;
-        }
-
-        /* Experience Section */
-        #experience {
-            background-color: var(--background);
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 1rem;
-        }
-
-        .tab-btn {
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.2s;
-            background-color: white;
-            color: var(--foreground);
-        }
-
-        .tab-btn.active {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .tab-btn:hover:not(.active) {
-            background-color: var(--muted);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-        }
-
-        .skill-card {
-            background-color: var(--card-bg);
-            border-radius: 0.5rem;
-            padding: 1.25rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .skill-icon {
-            color: var(--primary);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .skill-info h4 {
-            font-size: 1rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .skill-level {
-            color: var(--muted-foreground);
-            font-size: 0.875rem;
-        }
-
-        /* Projects Section */
-        #projects {
-            background-color: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .project-description {
-            color: var(--muted-foreground);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .project-link:hover {
-            color: var(--primary-light);
-        }
-
-        /* Contact Section */
-        #contact {
-            background-color: var(--background);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 32rem;
-        }
-
-        .contact-card {
-            background-color: var(--card-bg);
-            border-radius: 0.5rem;
-            padding: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            transition: border-color 0.2s;
-            border: 2px solid transparent;
-        }
-
-        .contact-card:hover {
-            border-color: var(--primary);
-        }
-
-        .contact-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 0.5rem;
-            background-color: rgba(13, 148, 136, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-icon i {
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .contact-info p {
-            font-size: 0.875rem;
-            color: var(--muted-foreground);
-            margin-bottom: 0.25rem;
-        }
-
-        .contact-info strong {
-            color: var(--foreground);
-            display: block;
-            font-weight: 600;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--foreground);
-            color: white;
-            padding: 2rem;
-        }
-
-        footer .container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            footer .container {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-            }
-        }
-
-        footer p {
-            font-size: 0.875rem;
-            opacity: 0.8;
-        }
-
-        footer-nav {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-size: 0.875rem;
-            transition: opacity 0.2s;
-        }
-
-        footer a:hover {
-            opacity: 0.8;
-        }
-
-        /* Profile Image */
-        .profile-section {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .profile-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary);
-            box-shadow: 0 8px 24px rgba(13, 148, 136, 0.2);
-            margin-bottom: 1.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>My Protiflo</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <div class="logo-icon">M</div>
-                <span class="logo-text">Mahdi Sheikh Issa</span>
-            </div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <nav id="desktop-nav">
+        <div class="logo">
+            <p class="highlight">M</p>ahdi  
+            <p class="highlight">S</p>eikh  
+            <p class="highlight">I</p>ssa  
+        </div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a> </li>
+                <li><a href="#experience">Experience</a> </li>
+                <li><a href="#projects">Projects</a> </li>
+                <li><a href="#contact">Contact</a> </li>
             </ul>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <p class="hero-subtitle">Welcome to my portfolio</p>
-                <h1 class="hero-title">Mahdi Sheikh Issa</h1>
-                <p class="hero-description">Artificial Intelligence Engineer</p>
-                <p class="hero-text">
-                    Passionate about building cutting-edge AI solutions. Specialized in machine learning, deep learning, and full-stack development with 4+ years of freelancing experience.
-                </p>
-                <div class="btn-group">
-                    <a href="./assets/Mahdi's_CV.pdf" class="btn btn-primary" download>
-                        <i class="fas fa-download"></i> Download CV
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-envelope"></i> Get in Touch
-                    </a>
-                </div>
-                <div class="socials">
-                    <a href="https://www.linkedin.com/in/mahdi-issa-191195244/" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/m-issa9" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/m.lssa5/" target="_blank" rel="noopener noreferrer" class="social-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
+    <nav id="humburger-nav">
+        <div class="logo"><p >M</p>ahdi  <p> S</p>eikh </p>I</p>ssa  </div>
+        <div class="humburger-menu">
+            <div class="humburger-icon" onclick="togglemenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="togglemenu()">about</a> </li>
+                <li><a href="#experience" onclick="togglemenu()">Experience</a> </li>
+                <li><a href="#projects" onclick="togglemenu()">Projects</a> </li>
+                <li><a href="#contact" onclick="togglemenu()">Contact</a> </li>
+            </div>
+        </div>
+    </nav>
+    <section id="prfoile">
+        <div class="section__pic-container">
+            <div class="shape-image"></div>
+            <img class="profile-image" src="./assets/profile-pic.jpg" alt="mahdi profile-pic">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hello,I'm</p>
+            <h1 class="title">Mahdi Sheikh Issa</h1>
+            <p class="section__text__p2">
+                Artificial Intelligence Engineer 
+            </p>
+            <div class="btn-container">
+                <button class="btn btn-color-2"
+                onclick="window.open('./assets/Mahdi's_CV.pdf')"
+                >
+                Download CV
+                </button>
+                <button class="btn btn-color-1"
+                onclick="location.href='#contact'"
+                >
+                Contact info
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My linkedin Profile"
+                class="icon"
+                onclick="location.href='https://www.linkedin.com/in/mahdi-issa-191195244/'">
+                <img src="./assets/github.png" alt="My github Profile"
+                class="icon"
+                onclick="location.href='https://github.com/m-issa9'">
+                
+                
+                <img src="./assets/instagram.png" alt="My instagram Profile"
+                class="icon"
+                onclick="location.href='https://www.instagram.com/m.lssa5/'">
+                
+                
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
     <section id="about">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Get To Know More</p>
-                <h2 class="section-title">About Me</h2>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-cards">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-icon">💼</div>
-                            <div>
-                                <div class="card-title">Experience</div>
-                                <p class="card-text">4+ Years Freelancing</p>
-                            </div>
-                        </div>
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="detailes-container">
+                        <img src="./assets/experience.png" alt="Experience icon"
+                        class="icon"/>
+                        <h3>Experience</h3>
+                        <p>4+ Year <br>Freelancing</p>
                     </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-icon">🎓</div>
-                            <div>
-                                <div class="card-title">Education</div>
-                                <p class="card-text">Bachelor in ITE<br>Artificial Intelligence Engineering</p>
-                            </div>
-                        </div>
+                    <div class="detailes-container">
+                        <img src="./assets/education.png" alt="education icon"
+                        class="icon"/>
+                        <h3>Education</h3>
+                        <p>Bechelor in ITE<br>Artificial Intelligence Engineering</p>
                     </div>
                 </div>
-
-                <div class="about-text">
+                <div class="text-container">
                     <p>
-                        Artificial Intelligence Engineer with over four years of freelancing experience in developing cutting-edge solutions. Proficient in front-end mobile app development using Flutter and back-end development with Django, complemented by expertise in MySQL for database management.
-                    </p>
-                    <p>
-                        Experienced in a wide range of AI-related tasks, including deep learning, machine learning, and Python programming. Successfully developed and deployed websites, showcasing strong web development capabilities.
-                    </p>
-                    <p>
-                        Possess foundational knowledge in Apache Spark and Scala, further enhancing versatility in big data processing. Passionate about delivering innovative, scalable, and efficient solutions in the tech industry.
+                        "Artificial Intelligence Engineer with over four years of freelancing experience in developing cutting-edge solutions.
+                         Proficient in front-end mobile app development using Flutter and back-end development with Django, 
+                         complemented by expertise in MySQL for database management. Experienced in a wide range of AI-related tasks,
+                          including deep learning, machine learning, and Python programming. Successfully developed and deployed websites, showcasing strong web development capabilities. 
+                          Possess foundational knowledge in Apache Spark and Scala, further enhancing versatility in big data processing. 
+                          Passionate about delivering innovative, scalable, and efficient solutions in the tech industry.
                     </p>
                 </div>
             </div>
         </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#experience'">
     </section>
-
-    <!-- Experience Section -->
     <section id="experience">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Explore My</p>
-                <h2 class="section-title">Experience</h2>
-            </div>
-
-            <div class="tabs">
-                <button class="tab-btn active" onclick="showSkills('ai')">AI Development</button>
-                <button class="tab-btn" onclick="showSkills('data')">Data Engineering</button>
-                <button class="tab-btn" onclick="showSkills('web')">Web Development</button>
-                <button class="tab-btn" onclick="showSkills('flutter')">Flutter Development</button>
-                <button class="tab-btn" onclick="showSkills('backend')">Backend Development</button>
-            </div>
-
-            <div class="skills-grid" id="skills-container">
-                <!-- Skills will be populated by JavaScript -->
+        <p class="section__text">Explore My</p>
+        <h1 class="title">Experience</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Ai Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Computer Vision</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Natural Language Processing</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Machine Learning</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Deep Learning</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                  <div class="detailes-container">
+                    <h2 class="experience-sub-title">Data Engineering</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Scala</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Spark</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>AWS</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Web Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>HTML</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>CSS</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>JavaScript</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>bootstrap</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>THREEjs</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Flutter Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Flutter</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>GET-X</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Firebase</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>UI-UX</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="detailes-container">
+                    <h2 class="experience-sub-title">Back-end Development</h2>
+                    <div class="article-container">
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Django</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>GET-X</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Git</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>Laravel</h3>
+                                <p>Basic</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>SQLlite</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                        <article>
+                            <img src="./assets/checkmark.png" alt="experience icon" class="icon">
+                            <div>
+                                <h3>MySQL</h3>
+                                <p>Intermediate</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
             </div>
         </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#projects'">
     </section>
-
-    <!-- Projects Section -->
     <section id="projects">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Browse My Recent</p>
-                <h2 class="section-title">Projects</h2>
-            </div>
-
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="./assets/project-1.png" alt="Oil Spill Detection App" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Oil Spill Detection App</h3>
-                        <p class="project-description">AI-powered mobile application for detecting and monitoring oil spills using computer vision</p>
-                        <a href="https://github.com/m-issa9/oilspill-app" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-external-link-alt"></i>
-                        </a>
+        <P class="section__text__p1">Browse My Recent</P>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="about-containers">
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-1.png" alt="project-1" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Oill Spill Detection app</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/m-issa9/oilspill-app'">
+                            Github
+                        </button>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <img src="./assets/project-2.jpg" alt="AI Music Player" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">AI Music Player</h3>
-                        <p class="project-description">Intelligent music player with AI-driven recommendations and smart playlist generation</p>
-                        <a href="https://github.com/m-issa9/Ai-Music-Player" target="_blank" rel="noopener noreferrer" class="project-link">
-                            View on GitHub <i class="fas fa-external-link-alt"></i>
-                        </a>
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-2.jpg" alt="project-2" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Ai Music Player</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/m-issa9/Ai-Music-Player'">
+                            Github
+                        </button>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <img src="./assets/project-3.png" alt="Large Language Model From Scratch" class="project-image">
-                    <div class="project-content">
-                        <h3 class="project-title">Large Language Model From Scratch</h3>
-                        <p class="project-description">Implementation of a Large Language Model built from first principles with deep learning</p>
-                        <a href="https://github.com/m-issa9/LLM-FromScratch." target="_blank" rel="noopener noreferrer" class="project-link">
-                            Visit <i class="fas fa-external-link-alt"></i>
-                        </a>
+                <div class="detailes-container color-container">
+                    <div class="article-container">
+                        <img src="./assets/project-3.png" alt="project-3" class="prject-img">
+                    </div>
+                    <h2 class="experience-sub-title prject-title">Large Language Model From Scratch</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn"
+                        onclick="location.href='https://github.com/m-issa9/LLM-FromScratch.'">
+                            visit
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
+        <img src="./assets/arrow.png" alt="arrow" class="icon arrow"
+        onclick="location.href='./#contact'">
     </section>
-
-    <!-- Contact Section -->
     <section id="contact">
-        <div class="container">
-            <div class="section-header">
-                <p class="section-subtitle">Get in Touch</p>
-                <h2 class="section-title">Contact</h2>
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container">
+                <img src="./assets/email.png" alt="email icon" class="icon contact-icon email-icon"/>
+                <p><a href="mailto:mhde.esa98@gmail.com">mahdi.sheikhissa@outlook.com</a></p>
             </div>
-
-            <div class="contact-grid">
-                <a href="mailto:mahdi.sheikhissa@outlook.com" class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <div class="contact-info">
-                        <p>Email</p>
-                        <strong>mahdi.sheikhissa@outlook.com</strong>
-                    </div>
-                </a>
-
-                <a href="https://www.linkedin.com/in/mahdi-issa-191195244/" target="_blank" rel="noopener noreferrer" class="contact-card">
-                    <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div class="contact-info">
-                        <p>LinkedIn</p>
-                        <strong>Connect with me</strong>
-                    </div>
-                </a>
+            <div class="contact-info-container">
+                <img src="./assets/linkedin.png" alt="linkedin icon" class="icon contact-icon"/>
+                <p><a href="https://www.linkedin.com/in/mahdi-issa-191195244/">linkedin</a></p>
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Mahdi Sheikh Issa. All Rights Reserved.</p>
-            <div class="footer-nav">
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+        <nav>
+            <div class="nav-links-conatiner">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a> </li>
+                    <li><a href="#experience">Experience</a> </li>
+                    <li><a href="#projects">Projects</a> </li>
+                    <li><a href="#contact">Contact</a> </li>
+                </ul>
             </div>
-        </div>
+        </nav>
+        <p>CopyRight &#169; 2025 Mahdi Sheikh Issa. All Rights Reserved</p>
     </footer>
-
-    <script>
-        const skillsData = {
-            ai: [
-                { name: "Computer Vision", level: "Intermediate" },
-                { name: "Natural Language Processing", level: "Basic" },
-                { name: "Machine Learning", level: "Intermediate" },
-                { name: "Deep Learning", level: "Intermediate" }
-            ],
-            data: [
-                { name: "Scala", level: "Intermediate" },
-                { name: "Spark", level: "Intermediate" },
-                { name: "AWS", level: "Intermediate" }
-            ],
-            web: [
-                { name: "HTML", level: "Basic" },
-                { name: "CSS", level: "Basic" },
-                { name: "JavaScript", level: "Basic" },
-                { name: "Bootstrap", level: "Basic" },
-                { name: "THREE.js", level: "Basic" }
-            ],
-            flutter: [
-                { name: "Flutter", level: "Intermediate" },
-                { name: "GET-X", level: "Intermediate" },
-                { name: "Git", level: "Intermediate" },
-                { name: "Firebase", level: "Basic" },
-                { name: "UI/UX", level: "Intermediate" }
-            ],
-            backend: [
-                { name: "Django", level: "Intermediate" },
-                { name: "GET-X", level: "Intermediate" },
-                { name: "Git", level: "Intermediate" },
-                { name: "Laravel", level: "Basic" },
-                { name: "SQLite", level: "Intermediate" },
-                { name: "MySQL", level: "Intermediate" }
-            ]
-        };
-
-        function showSkills(category) {
-            // Update active tab
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            // Update skills display
-            const container = document.getElementById('skills-container');
-            const skills = skillsData[category];
-            
-            container.innerHTML = skills.map(skill => `
-                <div class="skill-card">
-                    <div class="skill-icon">✓</div>
-                    <div class="skill-info">
-                        <h4>${skill.name}</h4>
-                        <p class="skill-level">${skill.level}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Initialize with AI Development skills
-        document.addEventListener('DOMContentLoaded', () => {
-            showSkills('ai');
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
